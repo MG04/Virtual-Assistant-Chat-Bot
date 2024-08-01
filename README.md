@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MG04/Virtual-Assistant-Chat-Bot">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="README Assets/logo.png" alt="Logo" width="220" height="200">
   </a>
 
   <h3 align="center">Virtual Assistant Chat Bot</h3>
@@ -38,6 +38,14 @@
 
 ## About The Project
 
-<p align="center">
-![image](https://github.com/user-attachments/assets/f726cfb9-4dbc-42e1-a823-fe0b345c897d)
-</p>
+This project is centered around the development of a user-friendly Python-based virtual assistant designed to show the possible usages of it, that users for managing daily tasks, accessing information, and automating routine activities. The virtual assistant leverages natural language processing (NLP) to understand user commands and perform various functions efficiently, ranging from opening applications to providing real-time information like weather updates or news.
+
+### Built With
+
+* [![Python][python.org]][Python-url]
+
+
+
+
+
+[Python-url]: https://www.python.org/
