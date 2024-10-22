@@ -27,11 +27,11 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#usage">Application Start</a></li>
+    <li><a href="#roadmap">Open Clock</a></li>
+    <li><a href="#contributing">Open Media Player</a></li>
+    <li><a href="#license">Open Calendar</a></li>
+    <li><a href="#contact"></a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
