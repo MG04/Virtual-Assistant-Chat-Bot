@@ -61,32 +61,32 @@ The assistant is architected around a modular decoupled design separating presen
 
 ```mermaid
 flowchart TD
-    subgraph UI ["User Interface Layer (Tkinter)"]
-        User(["👤 User Input"]) --> Entry["Text Entry / Return Key"]
-        Entry --> ChatLog["Chat Log Widget\n(Dark Theme #17202A)"]
-        ChatLog --> Decider{"Interaction Engine\n& Decider"}
+    subgraph UI [User Interface Layer - Tkinter]
+        User[User Input] --> Entry[Text Entry / Return Key]
+        Entry --> ChatLog[Chat Log Display]
+        ChatLog --> Decider{Decision Engine}
     end
 
-    subgraph Logic ["Routing & Task Dispatcher"]
-        Decider -->|"System commands"| Offline["offline_ops.py"]
-        Decider -->|"Cloud / Web commands"| Online["online_ops.py"]
-        Decider -->|"Help / Prompts"| Utils["utils.py"]
-        Decider -->|"Settings / Secrets"| Config["config.py"]
+    subgraph Routing [Routing and Task Dispatcher]
+        Decider -->|System Commands| Offline[offline_ops.py]
+        Decider -->|Web Services| Online[online_ops.py]
+        Decider -->|Help Dialogues| Utils[utils.py]
+        Decider -->|Configuration| Config[config.py]
     end
 
-    subgraph OSAutomation ["Local OS Automation"]
-        Offline --> Win["Windows (AppOpener / URI)"]
-        Offline --> Mac["macOS (open -a)"]
-        Offline --> Lin["Linux (xdg-open / desktop)"]
+    subgraph OSAutomation [Desktop OS Automation]
+        Offline --> Win[Windows - AppOpener / URI]
+        Offline --> Mac[macOS - open -a]
+        Offline --> Lin[Linux - xdg-open]
     end
 
-    subgraph ExternalServices ["External Cloud Services"]
-        Online --> Weather["OpenWeatherMap API"]
-        Online --> News["NewsAPI"]
-        Online --> GeoIP["IPify & IPapi Geolocation"]
-        Online --> GMaps["Google Maps Navigation"]
-        Online --> WA["WhatsApp Web Automation"]
-        Online --> SMTP["SMTP TLS Email Dispatch"]
+    subgraph ExternalServices [External Cloud Services]
+        Online --> Weather[OpenWeatherMap API]
+        Online --> News[NewsAPI Service]
+        Online --> GeoIP[IP Geolocation]
+        Online --> GMaps[Google Maps Navigation]
+        Online --> WA[WhatsApp Web Automation]
+        Online --> SMTP[SMTP TLS Email Dispatch]
     end
 ```
 
@@ -97,14 +97,14 @@ flowchart TD
 In accordance with HCI evaluation requirements, user interaction workflows were formally modeled via **Hierarchical Task Analysis (HTA)**:
 
 ```mermaid
-graph TD
-    T0["0. Interact with Virtual Personal Assistant"]
+flowchart TD
+    T0[0. Virtual Personal Assistant Interaction]
     
-    T1["1. Launch Assistant"]
-    T2["2. Input Request / Command"]
-    T3["3. Process & Route Input"]
-    T4["4. Execute Functionality"]
-    T5["5. Provide Feedback & Display Result"]
+    T1[1. Launch Assistant]
+    T2[2. Input Command]
+    T3[3. Route and Process]
+    T4[4. Execute Action]
+    T5[5. Provide Feedback]
 
     T0 --> T1
     T0 --> T2
@@ -112,22 +112,22 @@ graph TD
     T0 --> T4
     T0 --> T5
 
-    T1 --> T11["1.1 Initialize Tkinter GUI"]
-    T1 --> T12["1.2 Greet user based on daytime"]
+    T1 --> T11[1.1 Initialize Tkinter GUI]
+    T1 --> T12[1.2 Contextual greeting]
 
-    T2 --> T21["2.1 Type natural language prompt"]
-    T2 --> T22["2.2 Trigger via Enter or 'Send' button"]
+    T2 --> T21[2.1 Natural language prompt]
+    T2 --> T22[2.2 Submit via Enter or Send]
 
-    T3 --> T31["3.1 Normalize string input"]
-    T3 --> T32["3.2 Evaluate command tokens in decider()"]
+    T3 --> T31[3.1 Normalize text]
+    T3 --> T32[3.2 Token evaluation]
 
-    T4 --> T41["4.1 Local OS app launching"]
-    T4 --> T42["4.2 API querying (Weather, News)"]
-    T4 --> T43["4.3 External communication (Email, WhatsApp)"]
-    T4 --> T44["4.4 Browser navigation (Google, Maps)"]
+    T4 --> T41[4.1 Desktop application control]
+    T4 --> T42[4.2 Cloud APIs - Weather and News]
+    T4 --> T43[4.3 Communication - Email and WhatsApp]
+    T4 --> T44[4.4 Browser navigation]
 
-    T5 --> T51["5.1 Render confirmation / error bubble in chat"]
-    T5 --> T52["5.2 Reset focus to input field for next command"]
+    T5 --> T51[5.1 Render chat bubble response]
+    T5 --> T52[5.2 Reset input cursor focus]
 ```
 
 ---
@@ -283,10 +283,10 @@ Original university project reports are preserved in the [`docs/`](docs/) direct
 **Course Instructor**: Asst. Prof. Christos Troussas  
 
 ### Team Members
-- **Marios Gkoura** (ΓΚΟΥΡΑ ΜΑΡΙΟΣ) — ID: `20390041`
-- **Ioannis Drakos** (ΔΡΑΚΟΣ ΙΩΑΝΝΗΣ) — ID: `20390060`
-- **Angelos Tsekouras** (ΤΣΕΚΟΥΡΑΣ ΑΓΓΕΛΟΣ) — ID: `20390240`
-- **Stylianos Papakostopoulos** (ΠΑΠΑΚΩΣΤΟΠΟΥΛΟΣ ΣΤΥΛΙΑΝΟΣ) — ID: `20390276`
+- **Marios Gkoura** (ΓΚΟΥΡΑ ΜΑΡΙΟΣ)
+- **Ioannis Drakos** (ΔΡΑΚΟΣ ΙΩΑΝΝΗΣ)
+- **Angelos Tsekouras** (ΤΣΕΚΟΥΡΑΣ ΑΓΓΕΛΟΣ)
+- **Stylianos Papakostopoulos** (ΠΑΠΑΚΩΣΤΟΠΟΥΛΟΣ ΣΤΥΛΙΑΝΟΣ)
 
 ---
 
