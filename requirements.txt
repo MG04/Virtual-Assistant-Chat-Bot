@@ -1,0 +1,15 @@
+# Virtual Personal Assistant - Dependencies
+
+# HTTP Requests & API Integrations
+requests>=2.28.0
+
+# Environment Variable Management
+python-dotenv>=1.0.0
+
+# Browser & Desktop Automation (WhatsApp, UI Automation)
+pywhatkit>=5.4
+pyautogui>=0.9.54
+pynput>=1.7.6
+
+# Windows Desktop Application Launcher (Only required on Windows)
+AppOpener>=1.6; sys_platform == "win32"
